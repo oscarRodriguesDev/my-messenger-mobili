@@ -41,3 +41,11 @@ app-example
 # generated native folders
 /ios
 /android
+
+# project config files (ignorados permanentemente)
+.opencode/
+requisitos.md
+memorias.md
+.claude/
+checkpoints.md
+AGENTS.md
