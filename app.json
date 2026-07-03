@@ -3,15 +3,24 @@
     "name": "whats-mobile",
     "slug": "whats-mobile",
     "version": "1.0.0",
+    "owner": "hiskra",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "whatsmobile",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "Precisamos de acesso à câmera para enviar fotos e vídeos.",
+        "NSMicrophoneUsageDescription": "Precisamos de acesso ao microfone para enviar áudios e vídeos.",
+        "NSPhotoLibraryUsageDescription": "Precisamos de acesso à galeria para enviar fotos e vídeos.",
+        "NSPhotoLibraryAddUsageDescription": "Precisamos de permissão para salvar fotos e vídeos na galeria."
+      }
     },
     "android": {
+      "package": "com.hiskra.whatsmobile",
+      "versionCode": 1,
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
@@ -19,7 +28,15 @@
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "CAMERA",
+        "RECORD_AUDIO",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "READ_MEDIA_IMAGES",
+        "READ_MEDIA_VIDEO"
+      ]
     },
     "web": {
       "output": "static",
@@ -43,6 +60,12 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "2310abbe-b042-472b-a762-02158d268d3f"
+      }
     }
   }
 }
